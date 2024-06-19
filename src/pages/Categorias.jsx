@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import React, { useEffect, useState } from 'react'
 import CardProductos from '../components/CardProductos';
 const API='https://dummyjson.com/products/category/'
-const Categorias = () => {
+const Categorias = ({carrito, setCarrito}) => {
     const [datos, setDatos] = useState([])
     const params = useParams()
     let id=params.id;

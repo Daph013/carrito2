@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 const API='https://dummyjson.com/products?limit=20&skip=';
 import CardProductos from '../components/CardProductos';
-const Tienda = () => {
+const Tienda = ({carrito, setCarrito}) => {
     const [datos, setDatos] = useState([])
     const [skip, setSkip] = useState(0);
     const [total , setTotal] = useState(0);
@@ -62,7 +62,7 @@ const Tienda = () => {
         </div>
         <div className="row">
             {datos && datos.map((item, index)=>(
-                <CardProductos key={index} item={item}/>
+                <CardProductos key={index} item={item} carrito={carrito} setCarrito={setCarrito}/>
             
             ))}
         </div>

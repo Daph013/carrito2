@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import FiltroCategorias from './FiltroCategorias'
+import { CartFill } from 'react-bootstrap-icons';
 
-const Header = () => {
+const Header = ({carrito, setCarrito}) => {
     const [inputValue, setInputValue] = useState('');
     const handleChange = (event) => {
       setInputValue(event.target.value);
@@ -42,10 +43,13 @@ const Header = () => {
             </ul>
             </li>
        </ul>
+       <button className='btn btn-success me-2'>  <CartFill  size={25}/> <span className="bagbe">Carrito{carrito.length}</span></button>
       <form className="d-flex" role="search" onSubmit={handleSubmit}>
         <input value={inputValue} onChange={handleChange} className="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" />
         <button className="btn btn-outline-success" type="submit">Buscar</button>
       </form>
+      
+       
     </div>
   </div>
 </nav>

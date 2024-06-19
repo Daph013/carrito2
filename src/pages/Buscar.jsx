@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 import CardProductos from '../components/CardProductos';
 const API='https://dummyjson.com/products/search?q=';
 
-const Buscar = () => {
+const Buscar = ({carrito, setCarrito}) => {
     const [datos, setDatos] = useState([])
     const location = useLocation();
     const valueSearch = location.state;

@@ -1,7 +1,7 @@
 import Detalle from "./Detalle"
 
 
-const CardProductos = ({item}) => {
+const CardProductos = ({item,carrito, setCarrito}) => {
   return (
     <div className=' col-sm-6 col-md-4 col-lg-3 mb-4'>
                 <div className='card h-100'>
@@ -14,7 +14,7 @@ const CardProductos = ({item}) => {
                                     <a className='btn btn-info' data-bs-toggle="modal" data-bs-target={`#${item.id}`}>Detalles</a>
                                 </div>
                  </div>
-              <Detalle key={item.id} item={item}/>
+              <Detalle key={item.id} item={item} carrito={carrito} setCarrito={setCarrito}/>
 
             </div>
             
